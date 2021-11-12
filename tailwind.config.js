@@ -19,6 +19,9 @@ module.exports = {
         "brand-green": "#1E726B",
         "brand-green-light": "#B2D8D5",
       },
+      screens: {
+        xs: "360px",
+      },
     },
   },
   variants: {

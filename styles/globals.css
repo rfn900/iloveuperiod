@@ -15,12 +15,15 @@
     @apply relative flex min-h-screen lg:min-h-full overflow-hidden lg:h-[720px]
     2xl:h-[960px];
   }
+  .flex-center {
+    @apply flex items-center justify-center;
+  }
 }
 
 .rod-glass {
   background: rgba(0, 0, 0, 0.25);
   box-shadow: 0 8px 32px 0 rgba(63, 94, 45, 0.1);
-  backdrop-filter: blur(5px);
+  backdrop-filter: blur(7px);
   -webkit-backdrop-filter: blur(5px);
   border-radius: 10px;
 }
