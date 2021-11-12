@@ -24,3 +24,83 @@
   -webkit-backdrop-filter: blur(5px);
   border-radius: 10px;
 }
+
+@font-face {
+  font-family: "Flexo";
+  src: url("/fonts/Flexo/Flexo-Bold.ttf");
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Flexo";
+  src: url("/fonts/Flexo/Flexo-Demi.ttf");
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Flexo";
+  src: url("/fonts/Flexo/Flexo-Medium.ttf");
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Flexo";
+  src: url("/fonts/Flexo/Flexo-Regular.ttf");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Flexo";
+  src: url("/fonts/Flexo/Flexo-Light.ttf");
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Flexo";
+  src: url("/fonts/Flexo/Flexo-Thin.ttf");
+  font-style: normal;
+  font-weight: 200;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Gotham";
+  src: url("/fonts/Gotham/Gotham-Light.ttf");
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Gotham";
+  src: url("/fonts/Gotham/GothamBook.ttf");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Gotham";
+  src: url("/fonts/Gotham/Gotham-Medium.ttf");
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Gotham";
+  src: url("/fonts/Gotham/Gotham-Bold.ttf");
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+}

@@ -1,8 +1,13 @@
+const defaultTheme = require("tailwindcss/defaultTheme");
 module.exports = {
   mode: "jit",
   purge: ["./pages/**/*.{js,ts,jsx,tsx}", "./components/**/*.{js,ts,jsx,tsx}"],
   darkMode: false, // or 'media' or 'class'
   theme: {
+    fontFamily: {
+      sans: ["Flexo", "sans-serif", ...defaultTheme.fontFamily.sans],
+      body: ["Gotham", "sans-serif"],
+    },
     extend: {
       colors: {
         "brand-red": "#900503",
