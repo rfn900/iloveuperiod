@@ -9,7 +9,10 @@ function Nav() {
             <span className="text-lg pt-1 font-bold">I LOVE U PERIOD</span>
           </a>
         </Link>
-        <a className="text-md font-bold cursor-pointer">Cart</a>
+        <div className="flex items-center gap-8">
+          <BsSearch className="w=6 h-7" />
+          <BsHandbagFill className="w-7 h-7" />
+        </div>
       </div>
     </header>
   );

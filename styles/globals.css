@@ -1,0 +1,26 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+}
+
+@layer components {
+  .btn-primary {
+    @apply py-4 px-8 bg-brand-lavanda text-gray-700 uppercase tracking-wider lg:text-xl shadow-lg rounded-full;
+  }
+  .btn-secondary {
+  }
+  .section-full {
+    @apply relative flex min-h-screen lg:min-h-full overflow-hidden lg:h-[720px]
+    2xl:h-[960px];
+  }
+}
+
+.rod-glass {
+  background: rgba(0, 0, 0, 0.25);
+  box-shadow: 0 8px 32px 0 rgba(63, 94, 45, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border-radius: 10px;
+}
