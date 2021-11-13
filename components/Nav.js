@@ -25,7 +25,8 @@ function Nav() {
   const [menuOpen, setMenuOpen] = useState(false);
   const router = useRouter();
 
-  const navBarColor = router.pathname === "/" ? "gray-50" : "gray-700";
+  const navBarColor =
+    router.pathname === "/" ? "text-gray-50" : "text-gray-700";
 
   useEffect(() => {
     window.addEventListener("scroll", () => {
@@ -75,7 +76,6 @@ function Nav() {
             menuOpen={menuOpen}
             setMenuOpen={setMenuOpen}
             lockNav={lockNav}
-            navBarColor={navBarColor}
           />
         </div>
       </div>
