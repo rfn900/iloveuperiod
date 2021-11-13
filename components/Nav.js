@@ -5,6 +5,21 @@ import { BsHandbagFill } from "react-icons/bs";
 import { BsSearch } from "react-icons/bs";
 import BarsMenu from "./BarsMenu";
 
+const menuLinks = [
+  {
+    linkText: "Shop",
+    linkTo: "/shop",
+  },
+  {
+    linkText: "Collections",
+    linkTo: "/collections",
+  },
+  {
+    linkText: "More About Our Panties",
+    linkTo: "/about-our-period-pants",
+  },
+];
+
 function Nav() {
   const [lockNav, setLockNav] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
@@ -43,21 +58,15 @@ function Nav() {
         </Link>
 
         <div className="hidden lg:flex gap-8 font-thin text-lg tracking-wider">
-          <Link href="/" passHref>
-            <a className="cursor-pointer">
-              <span className="text-lg">Shop</span>
-            </a>
-          </Link>
-          <Link href="/" passHref>
-            <a className="cursor-pointer">
-              <span className="text-lg">Collections</span>
-            </a>
-          </Link>
-          <Link href="/" passHref>
-            <a className="cursor-pointer">
-              <span className="text-lg">More About Our Panties</span>
-            </a>
-          </Link>
+          {menuLinks.map((linkEl, index) => {
+            return (
+              <Link key={index} href={linkEl.linkTo} passHref>
+                <a className="cursor-pointer">
+                  <span className="text-lg">{linkEl.linkText}</span>
+                </a>
+              </Link>
+            );
+          })}
         </div>
         <div className="flex items-center gap-3 lg:gap-8">
           <BsSearch className="w-4 lg:w-6 h-4 lg:h-6 hidden lg:block" />
