@@ -6,7 +6,7 @@ module.exports = {
   theme: {
     fontFamily: {
       sans: ["Flexo", "sans-serif", ...defaultTheme.fontFamily.sans],
-      body: ["Gotham", "sans-serif"],
+      heading: ["Gotham", "sans-serif"],
     },
     extend: {
       colors: {
@@ -16,7 +16,7 @@ module.exports = {
         "brand-khaki-light": "#F3D8C3",
         "brand-lavanda": "#DFC4C3",
         "brand-lavanda-light": "#F0E6E6",
-        "brand-green": "#1E726B",
+        "brand-green": "#1C2B22",
         "brand-green-light": "#B2D8D5",
       },
       screens: {

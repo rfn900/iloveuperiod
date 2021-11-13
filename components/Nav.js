@@ -1,11 +1,15 @@
 import { useState, useEffect } from "react";
-import Image from "next/image";
 import Link from "next/link";
+import { useRouter } from "next/router";
 import { BsHandbagFill } from "react-icons/bs";
 import { BsSearch } from "react-icons/bs";
 
 function Nav() {
   const [lockNav, setLockNav] = useState(false);
+  const router = useRouter();
+
+  const navBarColor =
+    router.pathname === "/" ? "text-gray-50" : "text-gray-700";
 
   useEffect(() => {
     window.addEventListener("scroll", () => {
@@ -21,20 +25,19 @@ function Nav() {
     <header
       className={`${
         lockNav
-          ? "fixed rod-glass bg-gray-50 bg-opacity-80 text-brand-red"
-          : "text-gray-50 absolute bg-transparent"
+          ? "fixed rod-glass bg-gray-50 bg-opacity-25 text-brand-red"
+          : navBarColor + " absolute bg-transparent"
       } transition duration-500 w-screen top-0 z-20  py-4 md:px-2 `}
     >
       <div className="flex items-center justify-between max-w-6xl px-4 mx-auto lg:max-w-screen-xl">
         <Link href="/" passHref>
-          <a className="flex-center w-40 sm:w-60 cursor-pointer ">
-            <Image
-              src={lockNav ? "/logo-dark.png" : "/logo.png"}
-              alt="Company Logo"
-              objectFit="contain"
-              height={30}
-              width={220}
-            />
+          <a className=" flex-center cursor-pointer">
+            <p className="uppercase font-semi mr-2 font-medium tracking-widest text-xl lg:text-3xl">
+              I Love u
+            </p>
+            <span className="tracking-widest text-xl lg:text-3xl font-thin">
+              PERIOD
+            </span>
           </a>
         </Link>
 

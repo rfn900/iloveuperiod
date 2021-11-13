@@ -1,4 +1,4 @@
-export const formatter = new Intl.NumberFormat("se-SV", {
+export const formatter = new Intl.NumberFormat("en-us", {
   style: "currency",
   currency: "SEK",
   minimumIntegerDigits: 2,
