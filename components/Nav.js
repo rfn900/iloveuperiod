@@ -3,13 +3,14 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import { BsHandbagFill } from "react-icons/bs";
 import { BsSearch } from "react-icons/bs";
+import BarsMenu from "./BarsMenu";
 
 function Nav() {
   const [lockNav, setLockNav] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
   const router = useRouter();
 
-  const navBarColor =
-    router.pathname === "/" ? "text-gray-50" : "text-gray-700";
+  const navBarColor = router.pathname === "/" ? "gray-50" : "gray-700";
 
   useEffect(() => {
     window.addEventListener("scroll", () => {
@@ -25,11 +26,11 @@ function Nav() {
     <header
       className={`${
         lockNav
-          ? "fixed rod-glass bg-gray-50 bg-opacity-25 text-brand-red"
-          : navBarColor + " absolute bg-transparent"
-      } transition duration-500 w-screen top-0 z-20  py-4 md:px-2 `}
+          ? "fixed rod-glass bg-gray-50 bg-opacity-50 text-brand-red"
+          : "text-" + navBarColor + " absolute bg-transparent"
+      } transition duration-500 w-screen top-0 z-20 py-4 md:px-2 `}
     >
-      <div className="flex items-center justify-between max-w-6xl px-4 mx-auto lg:max-w-screen-xl">
+      <div className="flex items-center justify-between max-w-6xl px-6 mx-auto lg:max-w-screen-xl">
         <Link href="/" passHref>
           <a className=" flex-center cursor-pointer">
             <p className="uppercase font-semi mr-2 font-medium tracking-widest text-xl lg:text-3xl">
@@ -61,14 +62,12 @@ function Nav() {
         <div className="flex items-center gap-3 lg:gap-8">
           <BsSearch className="w-4 lg:w-6 h-4 lg:h-6 hidden lg:block" />
           <BsHandbagFill className="w-5 h-5 lg:w-7 lg:h-7" />
-          <div className="flex flex-col gap-[8px] lg:hidden">
-            <div
-              className={`w-6 h-px ${lockNav ? "bg-brand-red" : "bg-gray-50"}`}
-            ></div>
-            <div
-              className={`w-6 h-px ${lockNav ? "bg-brand-red" : "bg-gray-50"}`}
-            ></div>
-          </div>
+          <BarsMenu
+            menuOpen={menuOpen}
+            setMenuOpen={setMenuOpen}
+            lockNav={lockNav}
+            navBarColor={navBarColor}
+          />
         </div>
       </div>
     </header>
