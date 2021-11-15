@@ -43,7 +43,7 @@ function Nav() {
       className={`${
         lockNav
           ? "fixed rod-glass bg-gray-50 bg-opacity-50 text-brand-red"
-          : "text-" + navBarColor + " absolute bg-transparent"
+          : navBarColor + " absolute bg-transparent"
       } transition duration-500 w-screen top-0 z-20 py-4 md:px-2 `}
     >
       <div className="flex items-center justify-between max-w-6xl px-6 mx-auto lg:max-w-screen-xl">

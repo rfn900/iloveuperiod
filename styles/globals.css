@@ -108,9 +108,9 @@
 }
 
 .rod-rotate-45 {
-  transform: rotate(45deg) !important;
+  transform: rotateZ(585deg) !important;
 }
 
 .-rod-rotate-45 {
-  transform: rotate(-45deg) !important;
+  transform: rotateZ(-585deg) !important;
 }
