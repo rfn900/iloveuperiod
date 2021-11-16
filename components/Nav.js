@@ -4,6 +4,7 @@ import { useRouter } from "next/router";
 import { BsHandbagFill } from "react-icons/bs";
 import { BsSearch } from "react-icons/bs";
 import BarsMenu from "./BarsMenu";
+import { useActiveMobileMenu } from "../context/activeMobileMenu";
 
 const menuLinks = [
   {
@@ -22,11 +23,13 @@ const menuLinks = [
 
 function Nav() {
   const [lockNav, setLockNav] = useState(false);
-  const [menuOpen, setMenuOpen] = useState(false);
+  const { activeMobileMenu } = useActiveMobileMenu();
   const router = useRouter();
 
-  const navBarColor =
-    router.pathname === "/" ? "text-gray-50" : "text-gray-700";
+  let navBarColor =
+    router.pathname === "/" && !activeMobileMenu
+      ? "text-gray-50 bg-transparent"
+      : "text-brand-red rod-glass bg-gray-50 bg-opacity-50";
 
   useEffect(() => {
     window.addEventListener("scroll", () => {
@@ -36,15 +39,15 @@ function Nav() {
       window.removeEventListener("scroll", () => {
         window.scrollY > 40 ? setLockNav(true) : setLockNav(false);
       });
-  }, []);
+  }, [activeMobileMenu]);
 
   return (
     <header
       className={`${
         lockNav
           ? "fixed rod-glass bg-gray-50 bg-opacity-50 text-brand-red"
-          : navBarColor + " absolute bg-transparent"
-      } transition duration-500 w-screen top-0 z-20 py-4 md:px-2 `}
+          : navBarColor + " absolute"
+      } transition duration-500 w-screen top-0 z-50 py-4 md:px-2`}
     >
       <div className="flex items-center justify-between max-w-6xl px-6 mx-auto lg:max-w-screen-xl">
         <Link href="/" passHref>
@@ -72,11 +75,7 @@ function Nav() {
         <div className="flex items-center gap-3 lg:gap-8">
           <BsSearch className="w-4 lg:w-6 h-4 lg:h-6 hidden lg:block" />
           <BsHandbagFill className="w-5 h-5 lg:w-7 lg:h-7" />
-          <BarsMenu
-            menuOpen={menuOpen}
-            setMenuOpen={setMenuOpen}
-            lockNav={lockNav}
-          />
+          <BarsMenu promoBarInView={!lockNav} />
         </div>
       </div>
     </header>
