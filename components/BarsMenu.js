@@ -6,7 +6,7 @@ export default function BarsMenu({ promoBarInView }) {
   const { activeMobileMenu, setActiveMobileMenu } = useActiveMobileMenu();
   const router = useRouter();
 
-  const handleClick = (e) => {
+  const handleClick = () => {
     activeMobileMenu
       ? enableBodyScroll(document.body)
       : disableBodyScroll(document.body);

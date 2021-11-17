@@ -51,13 +51,11 @@ function Nav() {
     >
       <div className="flex items-center justify-between max-w-6xl px-6 mx-auto lg:max-w-screen-xl">
         <Link href="/" passHref>
-          <a className=" flex-center cursor-pointer">
-            <p className="uppercase font-semi mr-2 font-medium tracking-widest text-xl lg:text-3xl">
+          <a className=" flex-center cursor-pointer text-xl lg:text-2xl">
+            <p className="uppercase font-semi mr-2 font-medium tracking-widest ">
               I Love u
             </p>
-            <span className="tracking-widest text-xl lg:text-3xl font-thin">
-              PERIOD
-            </span>
+            <span className="tracking-widest font-thin">PERIOD</span>
           </a>
         </Link>
 
@@ -65,16 +63,23 @@ function Nav() {
           {menuLinks.map((linkEl, index) => {
             return (
               <Link key={index} href={linkEl.linkTo} passHref>
-                <a className="cursor-pointer">
+                <a className="cursor-pointer relative group">
                   <span className="text-lg">{linkEl.linkText}</span>
+                  <span
+                    className={`absolute h-1 w-full ${
+                      lockNav || router.pathname !== "/" // Will only change bg color in homepage
+                        ? "bg-brand-red bg-opacity-75"
+                        : "bg-brand-green-light"
+                    } rounded-xl transform scale-x-0 bottom-0 duration-300 ease-in-out left-0 transition origin-left group-hover:scale-x-100 `}
+                  ></span>
                 </a>
               </Link>
             );
           })}
         </div>
         <div className="flex items-center gap-3 lg:gap-8">
-          <BsSearch className="w-4 lg:w-6 h-4 lg:h-6 hidden lg:block" />
-          <BsHandbagFill className="w-5 h-5 lg:w-7 lg:h-7" />
+          <BsSearch className="w-4 lg:w-5 h-4 lg:h-5 hidden lg:block" />
+          <BsHandbagFill className="w-5 h-5 lg:w-6 lg:h-6" />
           <BarsMenu promoBarInView={!lockNav} />
         </div>
       </div>
