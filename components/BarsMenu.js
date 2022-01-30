@@ -18,7 +18,7 @@ export default function BarsMenu({ promoBarInView }) {
   return (
     <div
       onClick={handleClick}
-      className="cursor-pointer relativen w-8 h-8 flex-center lg:hidden"
+      className="cursor-pointer relative w-8 h-8 flex-center lg:hidden"
     >
       <div
         className={`absolute w-6 h-px transform -translate-y-1 transition duration-500 ${
